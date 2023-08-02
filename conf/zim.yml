@@ -35,25 +35,21 @@ rule-providers:
         type: http
         behavior: domain
         url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
-        #path: D:\1.Sys_Tools\Clash\rules\reject.txt
         interval: 86400
     AdBlock: 
         type: http
         behavior: classical
         url: https://cdn.jsdelivr.net/gh/Semporia/Clash@master/Rule/AdBlock.yaml
-        #path: D:\1.Sys_Tools\Clash\rules\AdBlock.yaml
         interval: 86400
     YouTube: 
         type: http
         behavior: classical
         url: https://cdn.jsdelivr.net/gh/Semporia/Clash@master/Rule/YouTube.yaml
-        #path: D:\1.Sys_Tools\Clash\rules\YouTube.yaml
         interval: 86400
 
 rules:
     - RULE-SET,reject,REJECT
     - RULE-SET,AdBlock,REJECT
-    - RULE-SET,YouTube,YouTube
     
     - 'DOMAIN,zhoushuren.cloud,DIRECT'
     - 'DOMAIN-SUFFIX,cdnst.net,自动选择'
