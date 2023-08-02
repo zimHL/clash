@@ -15,10 +15,10 @@ dns:
     fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
     fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
 proxies:
-    - { name: ChatGTP专用-001-美国, server: data-us-v2.usabooks.com.cn, port: 50402, type: vmess, uuid: b1478e24-4916-3abe-8f17-15931012ecbe, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: { path: /debian, headers: { Host: deb.debian.org } } }
-    - { name: ChatGTP专用-002, server: 95.169.24.158, port: 443, type: vmess, uuid: 2f84de32-1fb0-4b40-be37-b811f7050b70, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: { path: /, headers: { Host: api.cloud.189.cn } } }
-    - { name: ChatGTP专用-003, server: 95.169.24.158, port: 36395, type: vmess, uuid: 14199193-87b8-439f-d78c-a430103707e3, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: { path: "/?ed=2048" } }
-    - { name: ChatGTP专用-004, server: 199.115.229.12, port: 29080, type: vmess, uuid: 7e7c5056-ac2b-49e4-fbce-a47b09003e37, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false }
+    - { name: ChatGPT专用-001-美国, server: data-us-v2.usabooks.com.cn, port: 50402, type: vmess, uuid: b1478e24-4916-3abe-8f17-15931012ecbe, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: { path: /debian, headers: { Host: deb.debian.org } } }
+    - { name: ChatGPT专用-002, server: 95.169.24.158, port: 443, type: vmess, uuid: 2f84de32-1fb0-4b40-be37-b811f7050b70, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: { path: /, headers: { Host: api.cloud.189.cn } } }
+    - { name: ChatGPT专用-003, server: 95.169.24.158, port: 36395, type: vmess, uuid: 14199193-87b8-439f-d78c-a430103707e3, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: { path: "/?ed=2048" } }
+    - { name: ChatGPT专用-004, server: 199.115.229.12, port: 29080, type: vmess, uuid: 7e7c5056-ac2b-49e4-fbce-a47b09003e37, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false }
 
 proxy-providers:
     Helium Network:
@@ -33,8 +33,8 @@ proxy-providers:
 proxy-groups:
     - { name: zim ,type: select, proxies: [AdBlock,自动选择,Fallback]}
     - { name: 骇网 , type: select, use: [Helium Network]}
-    - { name: ChatGTP , type: select, proxies: [ChatGTP专用-001-美国,ChatGTP专用-002,ChatGTP专用-003,ChatGTP专用-004]}
-    - { name: 自动选择 ,type: url-test , proxies: [骇网,ChatGTP], url: 'http://www.gstatic.com/generate_204', interval: 600}
+    - { name: ChatGPT , type: select, proxies: [ChatGPT专用-001-美国,ChatGPT专用-002,ChatGPT专用-003,ChatGPT专用-004]}
+    - { name: 自动选择 ,type: url-test , proxies: [骇网,ChatGPT], url: 'http://www.gstatic.com/generate_204', interval: 600}
     - { name: Fallback, type: fallback, proxies: [骇网], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
     - { name: AdBlock, type: select, proxies: [REJECT] }
 
