@@ -34,7 +34,7 @@ proxy-groups:
     - { name: zim ,type: select, proxies: [AdBlock,自动选择,Fallback]}
     - { name: 骇网 , type: select, use: [Helium Network]}
     - { name: ChatGPT , type: select, proxies: [ChatGPT专用-001-美国,ChatGPT专用-002,ChatGPT专用-003,ChatGPT专用-004]}
-    - { name: 自动选择 ,type: url-test , proxies: [骇网,ChatGPT], url: 'http://www.gstatic.com/generate_204', interval: 600}
+    - { name: 自动选择 ,type: url-test , proxies: [骇网], url: 'http://www.gstatic.com/generate_204', interval: 600}
     - { name: Fallback, type: fallback, proxies: [骇网], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
     - { name: AdBlock, type: select, proxies: [REJECT] }
 
