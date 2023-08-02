@@ -25,7 +25,7 @@ proxy-providers:
             lazy: true
             url: http://www.gstatic.com/generate_204
 proxy-groups:
-    - { name: zim ,type: select, proxies: [自动选择,Fallback]}
+    - { name: zim ,type: select, proxies: [广告拦截,自动选择,Fallback]}
     - { name: 骇网 , type: select, use: [Helium Network]}
     - { name: '自动选择' ,type: url-test , proxies: [骇网], url: 'http://www.gstatic.com/generate_204', interval: 600}
     - { name: Fallback, type: fallback, proxies: [骇网], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
