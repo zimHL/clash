@@ -27,9 +27,10 @@ proxy-providers:
 proxy-groups:
     - { name: zim ,type: select, proxies: [AdBlock,自动选择,Fallback]}
     - { name: 骇网 , type: select, use: [Helium Network]}
-    - { name: '自动选择' ,type: url-test , proxies: [骇网], url: 'http://www.gstatic.com/generate_204', interval: 600}
+    - { name: 自动选择 ,type: url-test , proxies: [骇网], url: 'http://www.gstatic.com/generate_204', interval: 600}
     - { name: Fallback, type: fallback, proxies: [骇网], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
     - { name: AdBlock, type: select, proxies: [REJECT] }
+
 rule-providers:
     reject:
         type: http
@@ -40,11 +41,6 @@ rule-providers:
         type: http
         behavior: classical
         url: https://cdn.jsdelivr.net/gh/Semporia/Clash@master/Rule/AdBlock.yaml
-        interval: 86400
-    YouTube: 
-        type: http
-        behavior: classical
-        url: https://cdn.jsdelivr.net/gh/Semporia/Clash@master/Rule/YouTube.yaml
         interval: 86400
 
 rules:
