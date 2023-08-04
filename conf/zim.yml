@@ -30,11 +30,33 @@ proxy-providers:
             interval: 600
             lazy: true
             url: http://www.gstatic.com/generate_204
+    分享社:
+        type: file
+        path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
+        interval: 3600
+        health-check:
+            enable: true
+            interval: 600
+            lazy: true
+            url: http://www.gstatic.com/generate_204
+    美国节点:
+        type: file
+        path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
+        filter: 'United States|美国|US|纽约'
+        interval: 3600
+        health-check:
+            enable: true
+            interval: 600
+            lazy: true
+            url: http://www.gstatic.com/generate_204
+
 proxy-groups:
-    - { name: zim ,type: select, proxies: [自动选择,骇网,ChatGPT]}
+    - { name: zim ,type: select, proxies: [自动选择,骇网,分享社,ChatGPT]}
     - { name: 骇网 , type: select, use: [Helium Network]}
-    - { name: ChatGPT , type: select, proxies: [ChatGPT专用-001-美国,ChatGPT专用-002,ChatGPT专用-003,ChatGPT专用-004]}
-    - { name: 自动选择 ,type: url-test , use: [Helium Network], url: 'http://www.gstatic.com/generate_204', interval: 600}
+    - { name: 分享社 , type: select, use: [分享社]}
+    - { name: 美国 , type: select, use: [美国节点]}
+    - { name: ChatGPT , type: select, proxies: [ChatGPT专用-001-美国,ChatGPT专用-002,ChatGPT专用-003,ChatGPT专用-004,美国]}
+    - { name: 自动选择 ,type: url-test , use: [Helium Network,分享社], url: 'http://www.gstatic.com/generate_204', interval: 300}
     - { name: AdBlock, type: select, proxies: [REJECT] }
 
 rule-providers:
