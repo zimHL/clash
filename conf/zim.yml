@@ -51,7 +51,6 @@ proxy-providers:
     美国节点:
         type: file
         path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
-        url: https://suo.yt/a1X2ROj
         filter: 'United States|美国|US|纽约'
         interval: 3600
         health-check:
