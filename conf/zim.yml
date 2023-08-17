@@ -85,7 +85,7 @@ proxy-groups:
     - { name: 其他 , type: select, use: [other]}
     - { name: 美国 , type: select, use: [美国节点,AI]}
     - { name: ChatGPT , type: url-test, proxies: [ChatGPT专用-001-美国,ChatGPT专用-002,ChatGPT专用-003,ChatGPT专用-004,美国], url: 'http://www.gstatic.com/generate_204', interval: 300}
-    - { name: 自动选择 ,type: url-test , use: [Helium Network,PH-TG,分享社,其他], url: 'http://www.gstatic.com/generate_204', interval: 300}
+    - { name: 自动选择 ,type: url-test , use: [Helium Network,PH-TG,分享社,other], url: 'http://www.gstatic.com/generate_204', interval: 300}
     - { name: AdBlock, type: select, proxies: [REJECT] }
 
 rule-providers:
