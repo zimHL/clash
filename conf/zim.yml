@@ -21,6 +21,15 @@ proxies:
     - { name: ChatGPT专用-004, server: 199.115.229.12, port: 29080, type: vmess, uuid: 7e7c5056-ac2b-49e4-fbce-a47b09003e37, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false }
 
 proxy-providers:
+    other:
+        type: http
+        url: https://v1.mk/QBXkOSn
+        interval: 3600
+        health-check:
+            enable: true
+            interval: 600
+            lazy: true
+            url: http://www.gstatic.com/generate_204
     PH-TG:
         type: http
         url: https://suo.yt/a1X2ROj
@@ -51,6 +60,7 @@ proxy-providers:
     美国节点:
         type: file
         path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
+        url: https://v1.mk/QBXkOSn
         filter: 'United States|美国|US|纽约'
         interval: 3600
         health-check:
@@ -60,10 +70,11 @@ proxy-providers:
             url: http://www.gstatic.com/generate_204
 
 proxy-groups:
-    - { name: zim ,type: select, proxies: [自动选择,骇网,胖虎,分享社,ChatGPT]}
+    - { name: zim ,type: select, proxies: [自动选择,骇网,胖虎,分享社,其他,ChatGPT]}
     - { name: 骇网 , type: select, use: [Helium Network]}
     - { name: 胖虎 , type: select, use: [PH-TG]}
     - { name: 分享社 , type: select, use: [分享社]}
+    - { name: 其他 , type: select, use: [other]}
     - { name: 美国 , type: select, use: [美国节点]}
     - { name: ChatGPT , type: select, proxies: [ChatGPT专用-001-美国,ChatGPT专用-002,ChatGPT专用-003,ChatGPT专用-004,美国]}
     - { name: 自动选择 ,type: url-test , use: [Helium Network,PH-TG,分享社], url: 'http://www.gstatic.com/generate_204', interval: 300}
