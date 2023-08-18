@@ -77,15 +77,35 @@ proxy-providers:
             interval: 600
             lazy: true
             url: http://www.gstatic.com/generate_204
+    AI_2:
+        type: file
+        path: D:\1.Sys_Tools\Clash\conf\1692322381380.yml
+        filter: '美国|US|纽约'
+        interval: 3600
+        health-check:
+            enable: true
+            interval: 600
+            lazy: true
+            url: http://www.gstatic.com/generate_204
+    hty:
+        type: file
+        path: D:\1.Sys_Tools\Clash\conf\1692322381380.yml
+        interval: 3600
+        health-check:
+            enable: true
+            interval: 600
+            lazy: true
+            url: http://www.gstatic.com/generate_204
 proxy-groups:
-    - { name: zim ,type: select, proxies: [自动选择,骇网,胖虎,分享社,其他,ChatGPT]}
+    - { name: zim ,type: select, proxies: [自动选择,骇网,胖虎,分享社,海豚云,其他,ChatGPT]}
     - { name: 骇网 , type: select, use: [Helium Network]}
     - { name: 胖虎 , type: select, use: [PH-TG]}
     - { name: 分享社 , type: select, use: [分享社]}
+    - { name: 海豚云 , type: select, use: [hty]}
     - { name: 其他 , type: select, use: [other]}
-    - { name: 美国 , type: select, use: [美国节点,AI]}
+    - { name: 美国 , type: select, use: [美国节点,AI,AI_2]}
     - { name: ChatGPT , type: url-test, proxies: [ChatGPT专用-001-美国,ChatGPT专用-002,ChatGPT专用-003,ChatGPT专用-004,美国], url: 'http://www.gstatic.com/generate_204', interval: 300}
-    - { name: 自动选择 ,type: url-test , use: [Helium Network,PH-TG,分享社,other], url: 'http://www.gstatic.com/generate_204', interval: 300}
+    - { name: 自动选择 ,type: url-test , use: [Helium Network,PH-TG,分享社,hty,other], url: 'http://www.gstatic.com/generate_204', interval: 300}
     - { name: AdBlock, type: select, proxies: [REJECT] }
 
 rule-providers:
