@@ -96,6 +96,7 @@ proxy-providers:
             interval: 600
             lazy: true
             url: http://www.gstatic.com/generate_204
+
 proxy-groups:
     - { name: zim ,type: select, proxies: [自动选择,骇网,胖虎,分享社,海豚云,其他,ChatGPT]}
     - { name: 骇网 , type: select, use: [Helium Network]}
@@ -119,8 +120,19 @@ rule-providers:
         behavior: classical
         url: https://cdn.jsdelivr.net/gh/Semporia/Clash@master/Rule/AdBlock.yaml
         interval: 86400
-
+#rules:
+#    - DOMAIN-SUFFIX,google.com,auto                    域名后缀匹配，google.com,自动    mail.google.com会匹配，content-google.com不会匹配，已.google.com结尾的
+#    - DOMAIN-KEYWORD,google,auto                       域名关键字匹配，google.com,自动   mail.google.com、content-google.com都会匹配
+#    - DOMAIN,ad.com,REJECT                             域名全匹配，ad.com,拒绝
+#    - SRC-IP-CIDR,192.168.1.201/32,DIRECT              IP匹配，，直连
+#    - IP-CIDR,127.0.0.0/8,DIRECT                       IP4匹配，，直连
+#    - IP-CIDR6,2620:0:2d0:200::7/32,auto               IP6匹配，，自动
+#    - GEOIP,CN,DIRECT                                  地理位置检查匹配，中国，直连
+#    - DST-PORT,80,DIRECT                               夏令时端口匹配，80，直连
+#    - SRC-PORT,7777,DIRECT                             srt端口匹配，，直连
+#    - MATCH,auto                                       除上之外其他，自动
 rules:
+    - 'DOMAIN-SUFFIX,local,DIRECT'
     - 'RULE-SET,reject,REJECT'
     - 'RULE-SET,AdBlock,AdBlock'
 
