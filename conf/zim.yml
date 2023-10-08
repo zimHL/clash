@@ -1088,7 +1088,7 @@ rules:
     - DOMAIN-SUFFIX,gfx.ms,zim
     - DOMAIN-SUFFIX,ghostnoteapp.com,zim
     - DOMAIN-SUFFIX,git.io,zim
-    - DOMAIN-KEYWORD,github,zim
+    - DOMAIN-KEYWORD,github,tg
     - DOMAIN-SUFFIX,globalsign.com,zim
     - DOMAIN-SUFFIX,gmodules.com,zim
     - DOMAIN-SUFFIX,godaddy.com,zim
