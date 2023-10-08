@@ -23,7 +23,7 @@ proxies:
 proxy-providers:
     other:
         type: http
-        url: https://fast.shiyuanyinian.xyz/api/v1/client/subscribe?token=f4342a117826459f54dd4f863c691a88
+        url: https://fast.shiyuanyinian.xyz/api/v1/client/subscribe?token=f4342a117826459f54dd4f863c691a88&flag=clash
         interval: 3600
         health-check:
             enable: true
