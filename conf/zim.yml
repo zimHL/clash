@@ -23,7 +23,7 @@ proxies:
 proxy-providers:
     other:
         type: http
-        url: https://v1.mk/QBXkOSn
+        url: https://fast.shiyuanyinian.xyz/api/v1/client/subscribe?token=f4342a117826459f54dd4f863c691a88
         interval: 3600
         health-check:
             enable: true
