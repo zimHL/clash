@@ -97,16 +97,6 @@ proxy-providers:
             interval: 600
             lazy: true
             url: http://www.gstatic.com/generate_204
-    AI_4:
-        type: http
-        url: https://www.kuaigou.life/api/v1/client/subscribe?token=57207ae779027539ab800892d5a3a7c8&flag=clash
-        filter: '美国|US|纽约'
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
     tg_1:
         type: http
         url: https://s.haituncloud.vip/link/Zv3Er4wI4iE86SDZ?clash=1
@@ -130,16 +120,6 @@ proxy-providers:
     tg_3:
         type: file
         path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
-        filter: 'HK|hk|香港'
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
-    tg_4:
-        type: http
-        url: https://www.kuaigou.life/api/v1/client/subscribe?token=57207ae779027539ab800892d5a3a7c8&flag=clash
         filter: 'HK|hk|香港'
         interval: 3600
         health-check:
@@ -174,8 +154,8 @@ proxy-groups:
     - { name: 海豚云 , type: url-test, use: [hty], url: 'http://www.gstatic.com/generate_204', interval: 300}
     - { name: 快狗云 , type: url-test, use: [kgy], url: 'http://www.gstatic.com/generate_204', interval: 300}
     - { name: 其他 , type: url-test, use: [other], url: 'http://www.gstatic.com/generate_204', interval: 300}
-    - { name: 美国 , type: select, use: [美国节点,AI,AI_2,AI_3,AI_4]}
-    - { name: tg,type: select ,use: [tg_1,tg_2,tg_3,tg_4]}
+    - { name: 美国 , type: select, use: [美国节点,AI,AI_2,AI_3]}
+    - { name: tg,type: select ,use: [tg_1,tg_2,tg_3]}
     - { name: ChatGPT , type: url-test, proxies: [ChatGPT专用-001-美国,ChatGPT专用-002,ChatGPT专用-003,ChatGPT专用-004,美国], url: 'http://www.gstatic.com/generate_204', interval: 300}
     - { name: 自动选择 ,type: url-test , use: [Helium Network,PH-TG,分享社,hty,kgy,other], url: 'http://www.gstatic.com/generate_204', interval: 300}
     - { name: AdBlock, type: select, proxies: [REJECT] }
