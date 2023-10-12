@@ -167,9 +167,11 @@ proxy-groups:
     - { name: 其他 , type: select, use: [other]}
     - { name: 美国 , type: select, use: [美国节点,AI,AI_2,AI_3,AI_4]}
     - { name: tg,type: select ,use: [tg_1,tg_2,tg_3]}
+    - { name: music,type: select,proxies: [ 🇯🇵 日本节点]}
     - { name: ChatGPT , type: url-test, proxies: [ChatGPT专用-001-美国,ChatGPT专用-002,ChatGPT专用-003,ChatGPT专用-004,美国], url: 'http://www.gstatic.com/generate_204', interval: 300}
     - { name: 自动选择 ,type: url-test , use: [Helium Network,PH-TG,分享社,hty,kgy,other], url: 'http://www.gstatic.com/generate_204', interval: 300}
     - { name: AdBlock, type: select, proxies: [REJECT] }
+    - { name: 🇯🇵 日本节点,type: url-test, url: http://www.gstatic.com/generate_204 ,interval: 300,tolerance: 100 ,proxies: [ DIRECT ] }
 
 rule-providers:
     reject:
@@ -307,24 +309,24 @@ rules:
     - IP-CIDR,8.41.4.0/24,zim,no-resolve
     - DOMAIN-SUFFIX,services.googleapis.cn,zim
     - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,zim
-    #- DOMAIN-SUFFIX,pscdn.co,香港
-    #- DOMAIN-SUFFIX,scdn.co,香港
-    #- DOMAIN-SUFFIX,spoti.fi,香港
-    #- DOMAIN-SUFFIX,spotify.com,香港
-    #- DOMAIN-SUFFIX,spotifycdn.net,香港
-    #- DOMAIN-KEYWORD,spotify,香港
-    - DOMAIN-KEYWORD,youtube,zim
+    - DOMAIN-SUFFIX,pscdn.co,music
+    - DOMAIN-SUFFIX,scdn.co,music
+    - DOMAIN-SUFFIX,spoti.fi,music
+    - DOMAIN-SUFFIX,spotify.com,music
+    - DOMAIN-SUFFIX,spotifycdn.net,music
+    - DOMAIN-KEYWORD,spotify,music
+    - DOMAIN-KEYWORD,youtube,music
     - DOMAIN-KEYWORD,googlevideo,zim
     - DOMAIN,yt3.ggpht.com,zim
-    - DOMAIN-SUFFIX,youtube-nocookie.com,zim
+    - DOMAIN-SUFFIX,youtube-nocookie.com,music
     - DOMAIN-SUFFIX,googlevideo.com,zim
     - DOMAIN-SUFFIX,ggpht.com,zim
     - DOMAIN-SUFFIX,gvt1.com,zim
     - DOMAIN-SUFFIX,gvt2.com,zim
     - DOMAIN-SUFFIX,youtu.be,zim
     - DOMAIN-SUFFIX,ytimg.com,zim
-    - DOMAIN-SUFFIX,music.youtube.com,zim
-    - DOMAIN-SUFFIX,youtubeeducation.com,zim
+    - DOMAIN-SUFFIX,music.youtube.com,music
+    - DOMAIN-SUFFIX,youtubeeducation.com,music
     - DOMAIN-KEYWORD,adservice,AdBlock
     - DOMAIN-KEYWORD,bestvpn,AdBlock
     - DOMAIN,ad.51wnl-cq.com,AdBlock
@@ -1108,7 +1110,7 @@ rules:
     - DOMAIN-SUFFIX,geni.us,zim
     - DOMAIN-SUFFIX,gfx.ms,zim
     - DOMAIN-SUFFIX,ghostnoteapp.com,zim
-    - DOMAIN-SUFFIX,git.io,zim
+    - DOMAIN-SUFFIX,git.io,tg
     - DOMAIN-KEYWORD,github,tg
     - DOMAIN-SUFFIX,globalsign.com,zim
     - DOMAIN-SUFFIX,gmodules.com,zim
