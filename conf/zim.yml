@@ -344,18 +344,18 @@ rules:
     - DOMAIN-SUFFIX,spotify.com,music
     - DOMAIN-SUFFIX,spotifycdn.net,music
     - DOMAIN-KEYWORD,spotify,music
-    - DOMAIN-KEYWORD,youtube,music
+    - DOMAIN-SUFFIX,music.youtube.com,美国
+    - DOMAIN-SUFFIX,youtubeeducation.com,美国
+    - DOMAIN-SUFFIX,youtube-nocookie.com,美国
+    - DOMAIN-KEYWORD,youtube,zim
     - DOMAIN-KEYWORD,googlevideo,zim
     - DOMAIN,yt3.ggpht.com,zim
-    - DOMAIN-SUFFIX,youtube-nocookie.com,music
     - DOMAIN-SUFFIX,googlevideo.com,zim
     - DOMAIN-SUFFIX,ggpht.com,zim
     - DOMAIN-SUFFIX,gvt1.com,zim
     - DOMAIN-SUFFIX,gvt2.com,zim
     - DOMAIN-SUFFIX,youtu.be,zim
     - DOMAIN-SUFFIX,ytimg.com,zim
-    - DOMAIN-SUFFIX,music.youtube.com,music
-    - DOMAIN-SUFFIX,youtubeeducation.com,music
     - DOMAIN-KEYWORD,adservice,AdBlock
     - DOMAIN-KEYWORD,bestvpn,AdBlock
     - DOMAIN,ad.51wnl-cq.com,AdBlock
