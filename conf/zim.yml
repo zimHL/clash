@@ -188,7 +188,7 @@ proxy-providers:
             url: http://www.gstatic.com/generate_204
     ikuuu: # 长期白嫖，每月50G 每日签到送流量
         type: http
-        url: https://api.ikuai8.com/api/v2/client/subscribe?token=8a3f1f1e-9f0a-4f4a-8b0a-5e9b4b0a5e9b&flag=clash
+        url: https://h6ze0.no-mad-world.club/link/wslXYRbyDjf2yegs?clash=3&extend=1
         interval: 3600
         health-check:
             enable: true
