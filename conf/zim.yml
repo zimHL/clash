@@ -21,7 +21,7 @@ proxies:
     - { name: ChatGPT专用-004, server: 199.115.229.12, port: 29080, type: vmess, uuid: 7e7c5056-ac2b-49e4-fbce-a47b09003e37, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false }
 
 proxy-providers:
-    other:
+    十元:
         type: http
         url: https://fast.shiyuanyinian.xyz/api/v1/client/subscribe?token=f4342a117826459f54dd4f863c691a88&flag=clash
         interval: 3600
@@ -99,7 +99,7 @@ proxy-providers:
             url: http://www.gstatic.com/generate_204
     AI_4:
         type: http
-        url: https://www.kuaidog001.top/api/v1/client/subscribe?token=57207ae779027539ab800892d5a3a7c8&flag=clash
+        url: https://www.kuaidog001.top/api/v1/client/subscribe?token=ddeb707c221c81be484a95f85b7eb9b3&flag=clash
         filter: '美国|US|纽约'
         interval: 3600
         health-check:
@@ -178,7 +178,7 @@ proxy-providers:
             url: http://www.gstatic.com/generate_204
     kgy:
         type: http
-        url: https://www.kuaidog001.top/api/v1/client/subscribe?token=57207ae779027539ab800892d5a3a7c8&flag=clash
+        url: https://www.kuaidog001.top/api/v1/client/subscribe?token=ddeb707c221c81be484a95f85b7eb9b3&flag=clash
         #path: D:\1.Sys_Tools\Clash\conf\1694676282674.yml
         interval: 3600
         health-check:
@@ -186,20 +186,19 @@ proxy-providers:
             interval: 600
             lazy: true
             url: http://www.gstatic.com/generate_204
-
 proxy-groups:
-    - { name: zim ,type: select, proxies: [自动选择,骇网,胖虎,分享社,海豚云,快狗云,其他,ChatGPT]}
+    - { name: zim ,type: select, proxies: [自动选择,骇网,胖虎,分享社,海豚云,快狗云,十元,ChatGPT]}
     - { name: 骇网 , type: select, use: [Helium Network]}
     - { name: 胖虎 , type: select, use: [PH-TG]}
     - { name: 分享社 , type: select, use: [分享社]}
     - { name: 海豚云 , type: select, use: [hty]}
     - { name: 快狗云 , type: select, use: [kgy]}
-    - { name: 其他 , type: select, use: [other]}
+    - { name: 十元 , type: select, use: [十元]}
     - { name: 美国 , type: select, use: [美国节点,AI,AI_2,AI_3,AI_4]}
     - { name: tg,type: select ,use: [tg_1,tg_2,tg_3]}
     - { name: music,type: select ,use: [m_1,m_2,m_3]}
     - { name: ChatGPT , type: url-test, proxies: [ChatGPT专用-001-美国,ChatGPT专用-002,ChatGPT专用-003,ChatGPT专用-004,美国], url: 'http://www.gstatic.com/generate_204', interval: 300}
-    - { name: 自动选择 ,type: url-test , use: [Helium Network,PH-TG,分享社,hty,kgy,other], url: 'http://www.gstatic.com/generate_204', interval: 300}
+    - { name: 自动选择 ,type: url-test , use: [Helium Network,PH-TG,分享社,hty,kgy,十元], url: 'http://www.gstatic.com/generate_204', interval: 300}
     - { name: AdBlock, type: select, proxies: [REJECT] }
 
 rule-providers:
