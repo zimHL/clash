@@ -32,7 +32,7 @@ proxies:
           path: /JKLJOIJLIJ
           headers:
               Host: root.lvyukun73.top
-    - { naem: vless2,server: 159.89.101.212,port: 52084,type: vless,uuid: 83d047b8-9147-4959-e3df-b831392229e0,tls: true,network: tcp,servername: 159.89.101.212}
+    - { name: vless2,server: 159.89.101.212,port: 52084,type: vless,uuid: 83d047b8-9147-4959-e3df-b831392229e0,tls: true,network: tcp,servername: 159.89.101.212}
     - { name: vless3, server: 1.spacezzzz.online,port: 12345,type: vless,uuid: bd2e5eae-14e9-49f6-f365-5317bcf019cd,tls: true,network: tcp,skip-cert-verify: true,servername: 1.spacezzzz.online}
     - { name: vless4, server: 23.26.98.125,port: 58015,type: vless,uuid: 92168fbf-fbf6-49ad-ecac-8017b991f1fd,tls: true,network: tcp,skip-cert-verify: true,servername: 23.26.98.125}
     - { name: vless5, server: test.albertj.top,port: 30224,type: vless,uuid: e43e6e4a-cb4b-46e6-f9ab-962058054c89,tls: true,network: tcp,skip-cert-verify: true,servername: test.albertj.top}
@@ -92,16 +92,6 @@ proxy-providers:
         type: file
         path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
         filter: 'United States|美国|US|纽约'
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
-    AI:
-        type: http
-        url: https://v1.mk/QBXkOSn
-        filter: '美国|US|纽约'
         interval: 3600
         health-check:
             enable: true
@@ -235,11 +225,11 @@ proxy-groups:
     - { name: 快狗云 , type: select, use: [kgy]}
     - { name: 十元 , type: select, use: [十元]}
     - { name: ikuuu , type: select, use: [ikuuu]}
-    - { name: 美国 , type: select, use: [美国节点,AI,AI_2,AI_3,AI_4]}
+    - { name: 美国 , type: select, use: [美国节点,AI_2,AI_3,AI_4]}
     - { name: tg,type: select ,use: [tg_1,tg_2,tg_3]}
     - { name: music,type: select ,use: [m_1,m_2,m_3]}
     - { name: ChatGPT , type: url-test, proxies: [ChatGPT专用-001-美国,ChatGPT专用-002,ChatGPT专用-003,ChatGPT专用-004,美国], url: 'http://www.gstatic.com/generate_204', interval: 300}
-    - { name: 自动选择 ,type: url-test , use: [Helium Network,PH-TG,分享社,hty,kgy,ikuuu,十元,Vless节点], url: 'http://www.gstatic.com/generate_204', interval: 300}
+    - { name: 自动选择 ,type: url-test , use: [Helium Network,PH-TG,分享社,hty,kgy,ikuuu,十元], url: 'http://www.gstatic.com/generate_204', interval: 300}
     - { name: AdBlock, type: select, proxies: [REJECT] }
     - { name: Vless节点, type: select, proxies: [vless1,vless2,vless3,vless4,vless5,vless6] }
 rule-providers:
