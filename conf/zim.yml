@@ -1,24 +1,81 @@
 mixed-port: 7890
 allow-lan: true
-bind-address: '*'
+bind-address: "*"
 mode: rule
 log-level: info
-external-controller: '127.0.0.1:9090'
+external-controller: 127.0.0.1:9090
 dns:
     enable: true
     ipv6: false
-    default-nameserver: [223.5.5.5, 119.29.29.29]
+    default-nameserver:
+        - 223.5.5.5
+        - 119.29.29.29
     enhanced-mode: fake-ip
     fake-ip-range: 198.18.0.1/16
     use-hosts: true
-    nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
-    fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
-    fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
+    nameserver:
+        - https://doh.pub/dns-query
+        - https://dns.alidns.com/dns-query
+    fallback:
+        - https://doh.dns.sb/dns-query
+        - https://dns.cloudflare.com/dns-query
+        - https://dns.twnic.tw/dns-query
+        - tls://8.8.4.4:853
+    fallback-filter:
+        geoip: true
+        ipcidr:
+            - 240.0.0.0/4
+            - 0.0.0.0/32
 proxies:
-    - { name: ChatGPT专用-001-美国, server: data-us-v2.usabooks.com.cn, port: 50402, type: vmess, uuid: b1478e24-4916-3abe-8f17-15931012ecbe, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: { path: /debian, headers: { Host: deb.debian.org } } }
-    - { name: ChatGPT专用-002, server: 95.169.24.158, port: 443, type: vmess, uuid: 2f84de32-1fb0-4b40-be37-b811f7050b70, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: { path: /, headers: { Host: api.cloud.189.cn } } }
-    - { name: ChatGPT专用-003, server: 95.169.24.158, port: 36395, type: vmess, uuid: 14199193-87b8-439f-d78c-a430103707e3, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: { path: "/?ed=2048" } }
-    - { name: ChatGPT专用-004, server: 199.115.229.12, port: 29080, type: vmess, uuid: 7e7c5056-ac2b-49e4-fbce-a47b09003e37, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false }
+    - name: ChatGPT专用-001-美国
+      server: data-us-v2.usabooks.com.cn
+      port: 50402
+      type: vmess
+      uuid: b1478e24-4916-3abe-8f17-15931012ecbe
+      alterId: 0
+      cipher: auto
+      tls: false
+      skip-cert-verify: false
+      network: ws
+      ws-opts:
+          path: /debian
+          headers:
+              Host: deb.debian.org
+    - name: ChatGPT专用-002
+      server: 95.169.24.158
+      port: 443
+      type: vmess
+      uuid: 2f84de32-1fb0-4b40-be37-b811f7050b70
+      alterId: 0
+      cipher: auto
+      tls: false
+      skip-cert-verify: false
+      network: ws
+      ws-opts:
+          path: /
+          headers:
+              Host: api.cloud.189.cn
+    - name: ChatGPT专用-003
+      server: 95.169.24.158
+      port: 36395
+      type: vmess
+      uuid: 14199193-87b8-439f-d78c-a430103707e3
+      alterId: 0
+      cipher: auto
+      tls: false
+      skip-cert-verify: false
+      network: ws
+      ws-opts:
+          path: /?ed=2048
+    - name: ChatGPT专用-004
+      server: 199.115.229.12
+      port: 29080
+      type: vmess
+      uuid: 7e7c5056-ac2b-49e4-fbce-a47b09003e37
+      alterId: 0
+      cipher: auto
+      tls: false
+      skip-cert-verify: false
     - name: vless1
       server: root.lvyukun73.top
       port: 443
@@ -32,10 +89,41 @@ proxies:
           path: /JKLJOIJLIJ
           headers:
               Host: root.lvyukun73.top
-    - { name: vless2,server: 159.89.101.212,port: 52084,type: vless,uuid: 83d047b8-9147-4959-e3df-b831392229e0,tls: true,network: tcp,servername: 159.89.101.212}
-    - { name: vless3, server: 1.spacezzzz.online,port: 12345,type: vless,uuid: bd2e5eae-14e9-49f6-f365-5317bcf019cd,tls: true,network: tcp,skip-cert-verify: true,servername: 1.spacezzzz.online}
-    - { name: vless4, server: 23.26.98.125,port: 58015,type: vless,uuid: 92168fbf-fbf6-49ad-ecac-8017b991f1fd,tls: true,network: tcp,skip-cert-verify: true,servername: 23.26.98.125}
-    - { name: vless5, server: test.albertj.top,port: 30224,type: vless,uuid: e43e6e4a-cb4b-46e6-f9ab-962058054c89,tls: true,network: tcp,skip-cert-verify: true,servername: test.albertj.top}
+    - name: vless2
+      server: 159.89.101.212
+      port: 52084
+      type: vless
+      uuid: 83d047b8-9147-4959-e3df-b831392229e0
+      tls: true
+      network: tcp
+      servername: 159.89.101.212
+    - name: vless3
+      server: 1.spacezzzz.online
+      port: 12345
+      type: vless
+      uuid: bd2e5eae-14e9-49f6-f365-5317bcf019cd
+      tls: true
+      network: tcp
+      skip-cert-verify: true
+      servername: 1.spacezzzz.online
+    - name: vless4
+      server: 23.26.98.125
+      port: 58015
+      type: vless
+      uuid: 92168fbf-fbf6-49ad-ecac-8017b991f1fd
+      tls: true
+      network: tcp
+      skip-cert-verify: true
+      servername: 23.26.98.125
+    - name: vless5
+      server: test.albertj.top
+      port: 30224
+      type: vless
+      uuid: e43e6e4a-cb4b-46e6-f9ab-962058054c89
+      tls: true
+      network: tcp
+      skip-cert-verify: true
+      servername: test.albertj.top
     - name: vless6
       server: wu.yilongdog.top
       port: 443
@@ -49,10 +137,9 @@ proxies:
           path: /yilong950120
           headers:
               Host: wu.yilongdog.top
-# vless等新增类型节点文档参考
-# https://github.com/MetaCubeX/Clash.Meta/blob/Meta/docs/config.yaml
+    - {name: 🇰🇷 韩国—上移中转, server: shxanlwn.xzcloud.pro, port: 37715, type: vmess, uuid: 5a8ebcb9-0aa8-4158-aef6-7d183d2c1cf2, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
 proxy-providers:
-    十元: # 长期白嫖 每月20G
+    十元:
         type: http
         url: https://fast.shiyuanyinian.xyz/api/v1/client/subscribe?token=f4342a117826459f54dd4f863c691a88&flag=clash
         interval: 3600
@@ -70,7 +157,7 @@ proxy-providers:
             interval: 600
             lazy: true
             url: http://www.gstatic.com/generate_204
-    Helium Network: # 长期白嫖 TG群定期发放白嫖延期码
+    Helium Network:
         type: file
         path: D:\1.Sys_Tools\Clash\conf\1690894766090.yml
         interval: 3600
@@ -91,7 +178,7 @@ proxy-providers:
     美国节点:
         type: file
         path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
-        filter: 'United States|美国|US|纽约'
+        filter: United States|美国|US|纽约
         interval: 3600
         health-check:
             enable: true
@@ -101,7 +188,7 @@ proxy-providers:
     AI_2:
         type: file
         path: D:\1.Sys_Tools\Clash\conf\1692322381380.yml
-        filter: '美国|US|纽约'
+        filter: 美国|US|纽约
         interval: 3600
         health-check:
             enable: true
@@ -111,7 +198,7 @@ proxy-providers:
     AI_3:
         type: http
         url: https://fast.shiyuanyinian.xyz/api/v1/client/subscribe?token=f4342a117826459f54dd4f863c691a88&flag=clash
-        filter: '美国|US|纽约'
+        filter: 美国|US|纽约
         interval: 3600
         health-check:
             enable: true
@@ -121,7 +208,7 @@ proxy-providers:
     AI_4:
         type: http
         url: https://www.kuaidog001.top/api/v1/client/subscribe?token=ddeb707c221c81be484a95f85b7eb9b3&flag=clash
-        filter: '美国|US|纽约'
+        filter: 美国|US|纽约
         interval: 3600
         health-check:
             enable: true
@@ -131,7 +218,7 @@ proxy-providers:
     tg_1:
         type: http
         url: https://s.haituncloud.vip/link/Zv3Er4wI4iE86SDZ?clash=1
-        filter: 'HK|hk|香港'
+        filter: HK|hk|香港
         interval: 3600
         health-check:
             enable: true
@@ -141,7 +228,7 @@ proxy-providers:
     tg_2:
         type: http
         url: https://fast.shiyuanyinian.xyz/api/v1/client/subscribe?token=f4342a117826459f54dd4f863c691a88&flag=clash
-        filter: 'HK|hk|香港'
+        filter: HK|hk|香港
         interval: 3600
         health-check:
             enable: true
@@ -151,7 +238,7 @@ proxy-providers:
     tg_3:
         type: file
         path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
-        filter: 'HK|hk|香港'
+        filter: HK|hk|香港
         interval: 3600
         health-check:
             enable: true
@@ -161,7 +248,7 @@ proxy-providers:
     m_1:
         type: file
         path: D:\1.Sys_Tools\Clash\conf\1692322381380.yml
-        filter: '日本|东京|🇯🇵|JP|Japan'
+        filter: 日本|东京|🇯🇵|JP|Japan
         interval: 3600
         health-check:
             enable: true
@@ -181,14 +268,14 @@ proxy-providers:
     m_3:
         type: file
         path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
-        filter: '日本|东京|🇯🇵|JP|Japan'
+        filter: 日本|东京|🇯🇵|JP|Japan
         interval: 3600
         health-check:
             enable: true
             interval: 600
             lazy: true
             url: http://www.gstatic.com/generate_204
-    hty: # 长期白嫖，TG群获取白嫖码
+    hty:
         type: file
         path: D:\1.Sys_Tools\Clash\conf\1692322381380.yml
         interval: 3600
@@ -197,17 +284,16 @@ proxy-providers:
             interval: 600
             lazy: true
             url: http://www.gstatic.com/generate_204
-    kgy: # 每个账户可以白嫖一个月100G
+    kgy:
         type: http
         url: https://www.kuaidog001.top/api/v1/client/subscribe?token=ddeb707c221c81be484a95f85b7eb9b3&flag=clash
-        #path: D:\1.Sys_Tools\Clash\conf\1694676282674.yml
         interval: 3600
         health-check:
             enable: true
             interval: 600
             lazy: true
             url: http://www.gstatic.com/generate_204
-    ikuuu: # 长期白嫖，每月50G 每日签到送流量
+    ikuuu:
         type: http
         url: https://h6ze0.no-mad-world.club/link/wslXYRbyDjf2yegs?clash=3&extend=1
         interval: 3600
@@ -217,44 +303,137 @@ proxy-providers:
             lazy: true
             url: http://www.gstatic.com/generate_204
 proxy-groups:
-    - { name: zim ,type: select, proxies: [自动选择,骇网,胖虎,分享社,海豚云,快狗云,十元,ikuuu,ChatGPT,Vless节点]}
-    - { name: 骇网 , type: select, use: [Helium Network]}
-    - { name: 胖虎 , type: select, use: [PH-TG]}
-    - { name: 分享社 , type: select, use: [分享社]}
-    - { name: 海豚云 , type: select, use: [hty]}
-    - { name: 快狗云 , type: select, use: [kgy]}
-    - { name: 十元 , type: select, use: [十元]}
-    - { name: ikuuu , type: select, use: [ikuuu]}
-    - { name: 美国 , type: select, use: [美国节点,AI_2,AI_3,AI_4]}
-    - { name: tg,type: select ,use: [tg_1,tg_2,tg_3]}
-    - { name: music,type: select ,use: [m_1,m_2,m_3]}
-    - { name: ChatGPT , type: url-test, proxies: [ChatGPT专用-001-美国,ChatGPT专用-002,ChatGPT专用-003,ChatGPT专用-004,美国], url: 'http://www.gstatic.com/generate_204', interval: 300}
-    - { name: 自动选择 ,type: url-test , use: [Helium Network,PH-TG,分享社,hty,kgy,ikuuu,十元], url: 'http://www.gstatic.com/generate_204', interval: 300}
-    - { name: AdBlock, type: select, proxies: [REJECT] }
-    - { name: Vless节点, type: select, proxies: [vless1,vless2,vless3,vless4,vless5,vless6] }
+    - name: zim
+      type: select
+      proxies:
+          - 自动选择
+          - 骇网
+          - 胖虎
+          - 分享社
+          - 海豚云
+          - 快狗云
+          - 十元
+          - ikuuu
+          - ChatGPT
+          - Vless节点
+    - name: 骇网
+      type: select
+      use:
+          - Helium Network
+    - name: 胖虎
+      type: select
+      use:
+          - PH-TG
+    - name: 分享社
+      type: select
+      use:
+          - 分享社
+    - name: 海豚云
+      type: select
+      use:
+          - hty
+    - name: 快狗云
+      type: select
+      use:
+          - kgy
+    - name: 十元
+      type: select
+      use:
+          - 十元
+    - name: ikuuu
+      type: select
+      use:
+          - ikuuu
+    - name: 美国
+      type: select
+      use:
+          - 美国节点
+          - AI_2
+          - AI_3
+          - AI_4
+    - name: tg
+      type: select
+      use:
+          - tg_1
+          - tg_2
+          - tg_3
+    - name: music
+      type: select
+      use:
+          - m_1
+          - m_2
+          - m_3
+    - name: ChatGPT
+      type: url-test
+      proxies:
+          - ChatGPT专用-001-美国
+          - ChatGPT专用-002
+          - ChatGPT专用-003
+          - ChatGPT专用-004
+          - 美国
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+    - name: 自动选择
+      type: url-test
+      use:
+          - Helium Network
+          - PH-TG
+          - 分享社
+          - hty
+          - kgy
+          - ikuuu
+          - 十元
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+    - name: AdBlock
+      type: select
+      proxies:
+          - REJECT
+    - name: Vless节点
+      type: select
+      proxies:
+          - vless1
+          - vless2
+          - vless3
+          - vless4
+          - vless5
+          - vless6
+          - 🇰🇷 韩国—上移中转
 rule-providers:
     reject:
         type: http
         behavior: domain
-        url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+        url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
         interval: 86400
-    AdBlock: 
+    AdBlock:
         type: http
         behavior: classical
         url: https://cdn.jsdelivr.net/gh/Semporia/Clash@master/Rule/AdBlock.yaml
         interval: 86400
-#rules:
-#    - DOMAIN-SUFFIX,google.com,auto                    域名后缀匹配，google.com,自动    mail.google.com会匹配，content-google.com不会匹配，已.google.com结尾的
-#    - DOMAIN-KEYWORD,google,auto                       域名关键字匹配，google.com,自动   mail.google.com、content-google.com都会匹配
-#    - DOMAIN,ad.com,REJECT                             域名全匹配，ad.com,拒绝
-#    - SRC-IP-CIDR,192.168.1.201/32,DIRECT              IP匹配，，直连
-#    - IP-CIDR,127.0.0.0/8,DIRECT                       IP4匹配，，直连
-#    - IP-CIDR6,2620:0:2d0:200::7/32,auto               IP6匹配，，自动
-#    - GEOIP,CN,DIRECT                                  地理位置检查匹配，中国，直连
-#    - DST-PORT,80,DIRECT                               夏令时端口匹配，80，直连
-#    - SRC-PORT,7777,DIRECT                             srt端口匹配，，直连
-#    - MATCH,auto                                       除上之外其他，自动
+    去广告:
+        type: file
+        behavior: classical
+        path: D:\1.Sys_Tools\Clash\rules\AntiAD.rule
+    fxs:
+        type: file
+        behavior: classical
+        path: D:\1.Sys_Tools\Clash\rules\fxs_rules.yaml
 rules:
+    - DOMAIN-SUFFIX,githubusercontent.com,tg
+    - RULE-SET,去广告,REJECT
+    - DOMAIN-KEYWORD,pan.iosi.cn,DIRECT
+    - DOMAIN-KEYWORD,scmttec,DIRECT
+    - DOMAIN-KEYWORD,zhile.io,DIRECT
+    - DOMAIN-KEYWORD,zhoushuren,DIRECT
+    - DOMAIN-KEYWORD,qqe2,DIRECT
+    - DOMAIN-KEYWORD,haituncloud,海豚云
+    - DOMAIN-KEYWORD,pan123,DIRECT
+    - DOMAIN-KEYWORD,evan888,DIRECT
+    - DOMAIN-KEYWORD,huangye,DIRECT
+    - DOMAIN-KEYWORD,aoxiang.asia,DIRECT
+    - DOMAIN-KEYWORD,dev.azure.com,DIRECT
+    - DOMAIN-SUFFIX,local,DIRECT
+    - DOMAIN-KEYWORD,bard.google.com,ChatGPT
     - DOMAIN-SUFFIX,local,DIRECT
     - RULE-SET,reject,REJECT
     - RULE-SET,AdBlock,AdBlock
