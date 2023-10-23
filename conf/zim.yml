@@ -353,17 +353,21 @@ proxy-groups:
           - AI_3
           - AI_4
     - name: tg
-      type: select
+      type: url-test
       use:
           - tg_1
           - tg_2
           - tg_3
+      url: http://www.gstatic.com/generate_204
+      interval: 300
     - name: music
-      type: select
+      type: url-test
       use:
           - m_1
           - m_2
           - m_3
+      url: http://www.gstatic.com/generate_204
+      interval: 300
     - name: ChatGPT
       type: url-test
       proxies:
@@ -387,7 +391,7 @@ proxy-groups:
       url: http://www.gstatic.com/generate_204
       interval: 300
     - name: Vless节点
-      type: select
+      type: fallback
       proxies:
           - vless1
           - vless2
@@ -395,6 +399,8 @@ proxy-groups:
           - vless4
           - vless5
           - vless6
+      url: 'http://www.gstatic.com/generate_204'
+      interval: 300
 rule-providers:
     reject:
         type: http
