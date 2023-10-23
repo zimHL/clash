@@ -296,7 +296,7 @@ proxy-providers:
             url: http://www.gstatic.com/generate_204
     ikuuu:
         type: http
-        url: https://h6ze0.no-mad-world.club/link/wslXYRbyDjf2yegs?clash=3&extend=1
+        url: https://oyv21.no-mad-world.club/link/qb3fR04GLRCw9eJs?clash=3&extend=1
         interval: 3600
         health-check:
             enable: true
