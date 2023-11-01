@@ -78,67 +78,67 @@ proxies:
       cipher: auto
       tls: false
       skip-cert-verify: false
-    - name: vless1
-      server: root.lvyukun73.top
-      port: 443
-      type: vless
-      uuid: 933e7a99-1aee-4d6c-8975-36f4091723fe
-      tls: true
-      servername: root.lvyukun73.top
-      skip-cert-verify: true
-      network: ws
-      ws-opts:
-          path: /JKLJOIJLIJ
-          headers:
-              Host: root.lvyukun73.top
-    - name: vless2
-      server: 159.89.101.212
-      port: 52084
-      type: vless
-      uuid: 83d047b8-9147-4959-e3df-b831392229e0
-      tls: true
-      network: tcp
-      servername: 159.89.101.212
-    - name: vless3
-      server: 1.spacezzzz.online
-      port: 12345
-      type: vless
-      uuid: bd2e5eae-14e9-49f6-f365-5317bcf019cd
-      tls: true
-      network: tcp
-      skip-cert-verify: true
-      servername: 1.spacezzzz.online
-    - name: vless4
-      server: 23.26.98.125
-      port: 58015
-      type: vless
-      uuid: 92168fbf-fbf6-49ad-ecac-8017b991f1fd
-      tls: true
-      network: tcp
-      skip-cert-verify: true
-      servername: 23.26.98.125
-    - name: vless5
-      server: test.albertj.top
-      port: 30224
-      type: vless
-      uuid: e43e6e4a-cb4b-46e6-f9ab-962058054c89
-      tls: true
-      network: tcp
-      skip-cert-verify: true
-      servername: test.albertj.top
-    - name: vless6
-      server: wu.yilongdog.top
-      port: 443
-      type: vless
-      uuid: 601c9746-2161-4ee1-f7e2-5b0d5634fc9a
-      tls: true
-      servername: wu.yilongdog.top
-      skip-cert-verify: true
-      network: ws
-      ws-opts:
-          path: /yilong950120
-          headers:
-              Host: wu.yilongdog.top
+#    - name: vless1
+#      server: root.lvyukun73.top
+#      port: 443
+#      type: vless
+#      uuid: 933e7a99-1aee-4d6c-8975-36f4091723fe
+#      tls: true
+#      servername: root.lvyukun73.top
+#      skip-cert-verify: true
+#      network: ws
+#      ws-opts:
+#          path: /JKLJOIJLIJ
+#          headers:
+#              Host: root.lvyukun73.top
+#    - name: vless2
+#      server: 159.89.101.212
+#      port: 52084
+#      type: vless
+#      uuid: 83d047b8-9147-4959-e3df-b831392229e0
+#      tls: true
+#      network: tcp
+#      servername: 159.89.101.212
+#    - name: vless3
+#      server: 1.spacezzzz.online
+#      port: 12345
+#      type: vless
+#      uuid: bd2e5eae-14e9-49f6-f365-5317bcf019cd
+#      tls: true
+#      network: tcp
+#      skip-cert-verify: true
+#      servername: 1.spacezzzz.online
+#    - name: vless4
+#      server: 23.26.98.125
+#      port: 58015
+#      type: vless
+#      uuid: 92168fbf-fbf6-49ad-ecac-8017b991f1fd
+#      tls: true
+#      network: tcp
+#      skip-cert-verify: true
+#      servername: 23.26.98.125
+#    - name: vless5
+#      server: test.albertj.top
+#      port: 30224
+#      type: vless
+#      uuid: e43e6e4a-cb4b-46e6-f9ab-962058054c89
+#      tls: true
+#      network: tcp
+#      skip-cert-verify: true
+#      servername: test.albertj.top
+#    - name: vless6
+#      server: wu.yilongdog.top
+#      port: 443
+#      type: vless
+#      uuid: 601c9746-2161-4ee1-f7e2-5b0d5634fc9a
+#      tls: true
+#      servername: wu.yilongdog.top
+#      skip-cert-verify: true
+#      network: ws
+#      ws-opts:
+#          path: /yilong950120
+#          headers:
+#              Host: wu.yilongdog.top
 proxy-providers:
     十元:
         type: http
@@ -296,7 +296,7 @@ proxy-providers:
             url: http://www.gstatic.com/generate_204
     ikuuu:
         type: http
-        url: https://oyv21.no-mad-world.club/link/qb3fR04GLRCw9eJs?clash=3&extend=1
+        url: https://11864acf.no-mad-world.club/link/qb3fR04GLRCw9eJs?clash=3&extend=1
         interval: 3600
         health-check:
             enable: true
@@ -314,9 +314,8 @@ proxy-groups:
           - 海豚云
           - 快狗云
           - 十元
-          - ikuuu
           - ChatGPT
-          - Vless节点
+#          - 兜底
     - name: 骇网
       type: select
       use:
@@ -341,10 +340,6 @@ proxy-groups:
       type: select
       use:
           - 十元
-    - name: ikuuu
-      type: select
-      use:
-          - ikuuu
     - name: 美国
       type: select
       use:
@@ -390,15 +385,10 @@ proxy-groups:
           - 十元
       url: http://www.gstatic.com/generate_204
       interval: 300
-    - name: Vless节点
+    - name: 兜底
       type: fallback
-      proxies:
-          - vless1
-          - vless2
-          - vless3
-          - vless4
-          - vless5
-          - vless6
+      use:
+          - ikuuu
       url: 'http://www.gstatic.com/generate_204'
       interval: 300
 rule-providers:
