@@ -4,30 +4,6 @@ bind-address: "*"
 mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
-dns:
-    enable: true             # 关闭将使用系统 DNS
-    ipv6: false              # IPV6解析开关；如果为false，将返回ipv6结果为空
-    enhanced-mode: fake-ip   # 模式：redir-host或fake-ip
-    #listen: 0.0.0.0:53       # DNS监听地址 该项不能随意增加，会吃CPU
-    fake-ip-range: 198.18.0.1/16 # Fake-IP解析地址池
-      # fake ip 白名单列表'以下地址不会下发fakeip映射用于连接
-    fake-ip-filter: [ '*.lan', 'cable.auth.com', '*.msftconnecttest.com', '*.msftncsi.com', 'network-test.debian.org', 'detectportal.firefox.com', 'resolver1.opendns.com', '*.srv.nintendo.net', '*.stun.playstation.net', 'xbox.*.microsoft.com', '*.xboxlive.com', 'stun.*', 'global.turn.twilio.com', 'global.stun.twilio.com', 'localhost.*.qq.com', 'localhost.*.weixin.qq.com', '*.logon.battlenet.com.cn', '*.logon.battle.net', '*.blzstatic.cn', 'music.163.com', '*.music.163.com', '*.126.net', 'musicapi.taihe.com', 'music.taihe.com', 'songsearch.kugou.com', 'trackercdn.kugou.com', '*.kuwo.cn', 'api-jooxtt.sanook.com', 'api.joox.com', 'joox.com', 'y.qq.com', '*.y.qq.com', 'streamoc.music.tc.qq.com', 'mobileoc.music.tc.qq.com', 'isure.stream.qqmusic.qq.com', 'dl.stream.qqmusic.qq.com', 'aqqmusic.tc.qq.com', 'amobile.music.tc.qq.com', '*.xiami.com', '*.music.migu.cn', 'music.migu.cn', 'proxy.golang.org', '*.mcdn.bilivideo.cn', '*.cmpassport.com', 'id6.me', 'open.e.189.cn', 'mdn.open.wo.cn', 'opencloud.wostore.cn', 'auth.wosms.cn', '*.jegotrip.com.cn', '*.icitymobile.mobi', '*.pingan.com.cn', '*.cmbchina.com', 'pool.ntp.org', '*.pool.ntp.org', 'ntp.*.com', 'time.*.com', 'ntp?.*.com', 'time?.*.com', 'time.*.gov', 'time.*.edu.cn', '*.ntp.org.cn', 'PDC._msDCS.*.*', 'DC._msDCS.*.*', 'GC._msDCS.*.*' ]
-    use-hosts: true
-    nameserver:    # 默认DNS服务器，支持udp/tcp/dot/doh/doq
-        - https://doh.pub/dns-query
-        - https://dns.alidns.com/dns-query
-    fallback:
-        - https://doh.dns.sb/dns-query
-        - https://dns.cloudflare.com/dns-query
-        - https://dns.twnic.tw/dns-query
-        - tls://8.8.4.4:853
-    fallback-filter:
-        geoip: true
-        ipcidr:
-            - 240.0.0.0/4
-            - 0.0.0.0/32
-    cfw-bypass: [ 'localhost', '*.local', 'captive.apple.com', 'e.crashlytics.com', 'sequoia.apple.com', 'seed-sequoia.siri.apple.com', 'www.baidu.com', 'passenger.t3go.cn', 'yunbusiness.ccb.com', 'wxh.wo.cn', 'gate.lagou.com', 'www.abchina.com.cn', 'login-service.mobile-bank.psbc.com', 'mobile-bank.psbc.com', '10.0.0.0/8', '100.64.0.0/10', '127.0.0.1/32', '169.254.0.0/16', '172.16.0.0/12', '192.168.0.0/16', '192.168.122.1/32', '193.168.0.1/32', '224.0.0.0/4', '240.0.0.0/4', '255.255.255.255/32', '::1/128', 'fc00::/7', 'fd00::/8', 'fe80::/10', 'ff00::/8', '2001::/32', '2001:db8::/32', '2002::/16', '::ffff:0:0:0:0/1', '::ffff:128:0:0:0/1' ]
-  # 系统代理跳过列表
 proxies:
     - name: ChatGPT专用-001-美国
       server: data-us-v2.usabooks.com.cn
@@ -78,67 +54,67 @@ proxies:
       cipher: auto
       tls: false
       skip-cert-verify: false
-#    - name: vless1
-#      server: root.lvyukun73.top
-#      port: 443
-#      type: vless
-#      uuid: 933e7a99-1aee-4d6c-8975-36f4091723fe
-#      tls: true
-#      servername: root.lvyukun73.top
-#      skip-cert-verify: true
-#      network: ws
-#      ws-opts:
-#          path: /JKLJOIJLIJ
-#          headers:
-#              Host: root.lvyukun73.top
-#    - name: vless2
-#      server: 159.89.101.212
-#      port: 52084
-#      type: vless
-#      uuid: 83d047b8-9147-4959-e3df-b831392229e0
-#      tls: true
-#      network: tcp
-#      servername: 159.89.101.212
-#    - name: vless3
-#      server: 1.spacezzzz.online
-#      port: 12345
-#      type: vless
-#      uuid: bd2e5eae-14e9-49f6-f365-5317bcf019cd
-#      tls: true
-#      network: tcp
-#      skip-cert-verify: true
-#      servername: 1.spacezzzz.online
-#    - name: vless4
-#      server: 23.26.98.125
-#      port: 58015
-#      type: vless
-#      uuid: 92168fbf-fbf6-49ad-ecac-8017b991f1fd
-#      tls: true
-#      network: tcp
-#      skip-cert-verify: true
-#      servername: 23.26.98.125
-#    - name: vless5
-#      server: test.albertj.top
-#      port: 30224
-#      type: vless
-#      uuid: e43e6e4a-cb4b-46e6-f9ab-962058054c89
-#      tls: true
-#      network: tcp
-#      skip-cert-verify: true
-#      servername: test.albertj.top
-#    - name: vless6
-#      server: wu.yilongdog.top
-#      port: 443
-#      type: vless
-#      uuid: 601c9746-2161-4ee1-f7e2-5b0d5634fc9a
-#      tls: true
-#      servername: wu.yilongdog.top
-#      skip-cert-verify: true
-#      network: ws
-#      ws-opts:
-#          path: /yilong950120
-#          headers:
-#              Host: wu.yilongdog.top
+   - name: vless1
+     server: root.lvyukun73.top
+     port: 443
+     type: vless
+     uuid: 933e7a99-1aee-4d6c-8975-36f4091723fe
+     tls: true
+     servername: root.lvyukun73.top
+     skip-cert-verify: true
+     network: ws
+     ws-opts:
+         path: /JKLJOIJLIJ
+         headers:
+             Host: root.lvyukun73.top
+   - name: vless2
+     server: 159.89.101.212
+     port: 52084
+     type: vless
+     uuid: 83d047b8-9147-4959-e3df-b831392229e0
+     tls: true
+     network: tcp
+     servername: 159.89.101.212
+   - name: vless3
+     server: 1.spacezzzz.online
+     port: 12345
+     type: vless
+     uuid: bd2e5eae-14e9-49f6-f365-5317bcf019cd
+     tls: true
+     network: tcp
+     skip-cert-verify: true
+     servername: 1.spacezzzz.online
+   - name: vless4
+     server: 23.26.98.125
+     port: 58015
+     type: vless
+     uuid: 92168fbf-fbf6-49ad-ecac-8017b991f1fd
+     tls: true
+     network: tcp
+     skip-cert-verify: true
+     servername: 23.26.98.125
+   - name: vless5
+     server: test.albertj.top
+     port: 30224
+     type: vless
+     uuid: e43e6e4a-cb4b-46e6-f9ab-962058054c89
+     tls: true
+     network: tcp
+     skip-cert-verify: true
+     servername: test.albertj.top
+   - name: vless6
+     server: wu.yilongdog.top
+     port: 443
+     type: vless
+     uuid: 601c9746-2161-4ee1-f7e2-5b0d5634fc9a
+     tls: true
+     servername: wu.yilongdog.top
+     skip-cert-verify: true
+     network: ws
+     ws-opts:
+         path: /yilong950120
+         headers:
+             Host: wu.yilongdog.top
 proxy-providers:
     十元:
         type: http
