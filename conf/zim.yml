@@ -389,8 +389,7 @@ rule-providers:
 rules:
     - RULE-SET,去广告,REJECT
     - RULE-SET,reject,REJECT
-    - DOMAIN-SUFFIX,grazie.ai,ChatGPT
-    - DOMAIN-SUFFIX,intellij.net,ChatGPT
+    - DOMAIN-KEYWORD,grazie,ChatGPT
     - DOMAIN-SUFFIX,githubusercontent.com,tg
     - DOMAIN-SUFFIX,git.io,tg
     - DOMAIN-KEYWORD,github,tg
