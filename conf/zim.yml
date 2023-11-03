@@ -400,11 +400,13 @@ rule-providers:
 rules:
     - RULE-SET,去广告,REJECT
     - RULE-SET,reject,REJECT
-    - DOMAIN-KEYWORD,grazie,ChatGPT
+    - RULE-SET,AdBlock,REJECT
+    - DOMAIN-KEYWORD,grazie.ai,ChatGPT
+    - DOMAIN-KEYWORD,intellij.net,ChatGPT
+    - DOMAIN-KEYWORD,amazonaws.com,ChatGPT
     - DOMAIN-SUFFIX,githubusercontent.com,tg
     - DOMAIN-SUFFIX,git.io,tg
     - DOMAIN-KEYWORD,github,tg
-    - RULE-SET,AdBlock,REJECT
     - DOMAIN-KEYWORD,pan.iosi.cn,DIRECT
     - DOMAIN-KEYWORD,scmttec,DIRECT
     - DOMAIN-KEYWORD,zhile.io,DIRECT
