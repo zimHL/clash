@@ -439,6 +439,7 @@ rules:
     - RULE-SET,reject,REJECT
     - RULE-SET,AdBlock,REJECT
     - DOMAIN-KEYWORD,grazie.ai,ChatGPT
+    - DOMAIN-KEYWORD,copilot,ChatGPT
     - DOMAIN-KEYWORD,intellij.net,ChatGPT
     - DOMAIN-SUFFIX,githubusercontent.com,tg
     - DOMAIN-SUFFIX,git.io,tg
