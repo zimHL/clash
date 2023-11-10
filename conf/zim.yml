@@ -442,6 +442,7 @@ rules:
     - DOMAIN-SUFFIX,githubusercontent.com,tg
     - DOMAIN-SUFFIX,git.io,tg
     - DOMAIN-KEYWORD,github,tg
+    - DOMAIN-SUFFIX,ai.fakeopen.com,DIRECT
     - DOMAIN-KEYWORD,pan.iosi.cn,DIRECT
     - DOMAIN-KEYWORD,scmttec,DIRECT
     - DOMAIN-KEYWORD,zhile.io,DIRECT
