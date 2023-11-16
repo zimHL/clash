@@ -153,254 +153,184 @@ proxies:
           headers:
               Host: wu.yilongdog.top
 proxy-providers:
-    十元:
-        type: http
-        url: https://fast.shiyuanyinian.xyz/api/v1/client/subscribe?token=9589fa87a6086adf1c9403d73d8c81b1&flag=clash
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
-    PH-TG:
-        type: http
-        url: https://suo.yt/a1X2ROj
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
-    Helium Network:
-        type: file
-        path: D:\1.Sys_Tools\Clash\conf\1690894766090.yml
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
-    分享社:
-        type: file
-        path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
-    美国节点:
-        type: file
-        path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
-        filter: United States|美国|US|纽约
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
-    AI_2:
-        type: file
-        path: D:\1.Sys_Tools\Clash\conf\1692322381380.yml
-        filter: 美国|US|纽约
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
-    AI_3:
-        type: http
-        url: https://fast.shiyuanyinian.xyz/api/v1/client/subscribe?token=9589fa87a6086adf1c9403d73d8c81b1&flag=clash
-        filter: 美国|US|纽约
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
-    AI_4:
-        type: http
-        url: https://www.kuaidog001.top/api/v1/client/subscribe?token=ddeb707c221c81be484a95f85b7eb9b3&flag=clash
-        filter: 美国|US|纽约
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
-    tg_1:
-        type: http
-        url: https://s.haituncloud.vip/link/Zv3Er4wI4iE86SDZ?clash=1
-        filter: HK|hk|香港
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
-    tg_2:
-        type: http
-        url: https://fast.shiyuanyinian.xyz/api/v1/client/subscribe?token=f4342a117826459f54dd4f863c691a88&flag=clash
-        filter: HK|hk|香港
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
-    tg_3:
-        type: file
-        path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
-        filter: HK|hk|香港
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
-    m_1:
-        type: file
-        path: D:\1.Sys_Tools\Clash\conf\1692322381380.yml
-        filter: 日本|东京|🇯🇵|JP|Japan
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
-    m_2:
-        type: file
-        path: D:\1.Sys_Tools\Clash\conf\1691458633120.yml
-        filter: '日本|东京|🇯🇵|JP|Japan'
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
-    m_3:
-        type: file
-        path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
-        filter: 日本|东京|🇯🇵|JP|Japan
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
-    hty:
-        type: file
-        path: D:\1.Sys_Tools\Clash\conf\1692322381380.yml
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
-    kgy:
-        type: http
-        url: https://www.kuaidog001.top/api/v1/client/subscribe?token=ddeb707c221c81be484a95f85b7eb9b3&flag=clash
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
-    ikuuu:
-        type: http
-        url: https://11864acf.no-mad-world.club/link/qb3fR04GLRCw9eJs?clash=3&extend=1
-        interval: 3600
-        health-check:
-            enable: true
-            interval: 600
-            lazy: true
-            url: http://www.gstatic.com/generate_204
+  十元:
+    type: http
+    url: https://fast.shiyuanyinian.xyz/api/v1/client/subscribe?token=9589fa87a6086adf1c9403d73d8c81b1&flag=clash
+    interval: 3600
+    health-check:
+      enable: true
+      interval: 600
+      lazy: true
+      url: http://www.gstatic.com/generate_204
+  PH-TG:
+    type: http
+    url: https://suo.yt/a1X2ROj
+    interval: 3600
+    health-check:
+      enable: true
+      interval: 600
+      lazy: true
+      url: http://www.gstatic.com/generate_204
+  Helium Network:
+    type: file
+    path: D:\1.Sys_Tools\Clash\conf\1690894766090.yml
+    interval: 3600
+    health-check:
+      enable: true
+      interval: 600
+      lazy: true
+      url: http://www.gstatic.com/generate_204
+  分享社:
+    type: file
+    path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
+    interval: 3600
+    health-check:
+      enable: true
+      interval: 600
+      lazy: true
+      url: http://www.gstatic.com/generate_204
+  美国节点:
+    type: file
+    path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
+    filter: United States|美国|US|纽约
+    interval: 3600
+    health-check:
+      enable: true
+      interval: 600
+      lazy: true
+      url: http://www.gstatic.com/generate_204
+  AI_1:
+    type: http
+    url: https://fast.shiyuanyinian.xyz/api/v1/client/subscribe?token=9589fa87a6086adf1c9403d73d8c81b1&flag=clash
+    filter: 美国|US|纽约
+    interval: 3600
+    health-check:
+      enable: true
+      interval: 600
+      lazy: true
+      url: http://www.gstatic.com/generate_204
+  tg_1:
+    type: http
+    url: https://fast.shiyuanyinian.xyz/api/v1/client/subscribe?token=f4342a117826459f54dd4f863c691a88&flag=clash
+    filter: HK|hk|香港
+    interval: 3600
+    health-check:
+      enable: true
+      interval: 600
+      lazy: true
+      url: http://www.gstatic.com/generate_204
+  tg_2:
+    type: file
+    path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
+    filter: HK|hk|香港
+    interval: 3600
+    health-check:
+      enable: true
+      interval: 600
+      lazy: true
+      url: http://www.gstatic.com/generate_204
+  m_1:
+    type: file
+    path: D:\1.Sys_Tools\Clash\conf\1691458633120.yml
+    filter: '日本|东京|🇯🇵|JP|Japan'
+    interval: 3600
+    health-check:
+      enable: true
+      interval: 600
+      lazy: true
+      url: http://www.gstatic.com/generate_204
+  m_2:
+    type: file
+    path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
+    filter: 日本|东京|🇯🇵|JP|Japan
+    interval: 3600
+    health-check:
+      enable: true
+      interval: 600
+      lazy: true
+      url: http://www.gstatic.com/generate_204
+  ikuuu:
+    type: http
+    url: https://11864acf.no-mad-world.club/link/qb3fR04GLRCw9eJs?clash=3&extend=1
+    interval: 3600
+    health-check:
+      enable: true
+      interval: 600
+      lazy: true
+      url: http://www.gstatic.com/generate_204
 proxy-groups:
-    - name: zim
-      type: select
-      proxies:
-          - 自动选择
-          - 骇网
-          - 胖虎
-          - 分享社
-          - 海豚云
-          - 快狗云
-          - 十元
-          - ChatGPT
-#          - 兜底
-    - name: 骇网
-      type: select
-      use:
-          - Helium Network
-    - name: 胖虎
-      type: select
-      use:
-          - PH-TG
-    - name: 分享社
-      type: select
-      use:
-          - 分享社
-    - name: 海豚云
-      type: select
-      use:
-          - hty
-    - name: 快狗云
-      type: select
-      use:
-          - kgy
-    - name: 十元
-      type: select
-      use:
-          - 十元
-    - name: tg
-      type: url-test
-      use:
-          - tg_1
-          - tg_2
-          - tg_3
-      url: http://www.gstatic.com/generate_204
-      interval: 300
-    - name: music
-      type: url-test
-      use:
-          - m_1
-          - m_2
-          - m_3
-      url: http://www.gstatic.com/generate_204
-      interval: 300
-    - name: ChatGPT
-      type: url-test
-      proxies:
-          - ChatGPT专用-001-美国
-          - ChatGPT专用-002
-          - ChatGPT专用-003
-          - ChatGPT专用-004
-      use:
-          - 美国节点
-          - AI_2
-          - AI_3
-          - AI_4
-      url: http://www.gstatic.com/generate_204
-      interval: 300
-    - name: 自动选择
-      type: url-test
-      use:
-          - Helium Network
-          - PH-TG
-          - 分享社
-          - hty
-          - kgy
-          - ikuuu
-          - 十元
-      url: http://www.gstatic.com/generate_204
-      interval: 300
-    - name: 兜底
-      type: fallback
-      use:
-          - ikuuu
-      url: 'http://www.gstatic.com/generate_204'
-      interval: 300
+  - name: zim
+    type: select
+    proxies:
+      - 自动选择
+      - 骇网
+      - 胖虎
+      - 分享社
+      - 十元
+      - ChatGPT
+  #          - 兜底
+  - name: 骇网
+    type: select
+    use:
+      - Helium Network
+  - name: 胖虎
+    type: select
+    use:
+      - PH-TG
+  - name: 分享社
+    type: select
+    use:
+      - 分享社
+  - name: ikuuu
+    type: select
+    use:
+      - ikuuu
+  - name: 十元
+    type: select
+    use:
+      - 十元
+  - name: tg
+    type: url-test
+    use:
+      - tg_1
+      - tg_2
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: music
+    type: url-test
+    use:
+      - m_1
+      - m_2
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: ChatGPT
+    type: url-test
+    proxies:
+      - ChatGPT专用-001-美国
+      - ChatGPT专用-002
+      - ChatGPT专用-003
+      - ChatGPT专用-004
+    use:
+      - 美国节点
+      - AI_1
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 自动选择
+    type: url-test
+    use:
+      - Helium Network
+      - PH-TG
+      - 分享社
+      - ikuuu
+      - 十元
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 兜底
+    type: fallback
+    use:
+      - ikuuu
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
 rule-providers:
     reject:
         type: http
