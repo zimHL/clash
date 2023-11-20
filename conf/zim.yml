@@ -162,43 +162,6 @@ proxy-providers:
       interval: 600
       lazy: true
       url: http://www.gstatic.com/generate_204
-  PH-TG:
-    type: http
-    url: https://suo.yt/a1X2ROj
-    interval: 3600
-    health-check:
-      enable: true
-      interval: 600
-      lazy: true
-      url: http://www.gstatic.com/generate_204
-  Helium Network:
-    type: file
-    path: D:\1.Sys_Tools\Clash\conf\1690894766090.yml
-    interval: 3600
-    health-check:
-      enable: true
-      interval: 600
-      lazy: true
-      url: http://www.gstatic.com/generate_204
-  分享社:
-    type: file
-    path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
-    interval: 3600
-    health-check:
-      enable: true
-      interval: 600
-      lazy: true
-      url: http://www.gstatic.com/generate_204
-  美国节点:
-    type: file
-    path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
-    filter: United States|美国|US|纽约
-    interval: 3600
-    health-check:
-      enable: true
-      interval: 600
-      lazy: true
-      url: http://www.gstatic.com/generate_204
   AI_1:
     type: http
     url: https://fast.shiyuanyinian.xyz/api/v1/client/subscribe?token=9589fa87a6086adf1c9403d73d8c81b1&flag=clash
@@ -212,37 +175,7 @@ proxy-providers:
   tg_1:
     type: http
     url: https://fast.shiyuanyinian.xyz/api/v1/client/subscribe?token=f4342a117826459f54dd4f863c691a88&flag=clash
-    filter: HK|hk|香港
-    interval: 3600
-    health-check:
-      enable: true
-      interval: 600
-      lazy: true
-      url: http://www.gstatic.com/generate_204
-  tg_2:
-    type: file
-    path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
-    filter: HK|hk|香港
-    interval: 3600
-    health-check:
-      enable: true
-      interval: 600
-      lazy: true
-      url: http://www.gstatic.com/generate_204
-  m_1:
-    type: file
-    path: D:\1.Sys_Tools\Clash\conf\1691458633120.yml
-    filter: '日本|东京|🇯🇵|JP|Japan'
-    interval: 3600
-    health-check:
-      enable: true
-      interval: 600
-      lazy: true
-      url: http://www.gstatic.com/generate_204
-  m_2:
-    type: file
-    path: D:\1.Sys_Tools\Clash\conf\1691126068731.yml
-    filter: 日本|东京|🇯🇵|JP|Japan
+    filter: HK|hk|香港|TW|台湾|SG|新加坡|JP|日本|KR|韩国
     interval: 3600
     health-check:
       enable: true
@@ -263,24 +196,8 @@ proxy-groups:
     type: select
     proxies:
       - 自动选择
-      - 骇网
-      - 胖虎
-      - 分享社
       - 十元
       - ChatGPT
-  #          - 兜底
-  - name: 骇网
-    type: select
-    use:
-      - Helium Network
-  - name: 胖虎
-    type: select
-    use:
-      - PH-TG
-  - name: 分享社
-    type: select
-    use:
-      - 分享社
   - name: ikuuu
     type: select
     use:
@@ -293,14 +210,12 @@ proxy-groups:
     type: url-test
     use:
       - tg_1
-      - tg_2
     url: http://www.gstatic.com/generate_204
     interval: 300
   - name: music
     type: url-test
     use:
-      - m_1
-      - m_2
+      - ikuuu
     url: http://www.gstatic.com/generate_204
     interval: 300
   - name: ChatGPT
@@ -311,25 +226,15 @@ proxy-groups:
       - ChatGPT专用-003
       - ChatGPT专用-004
     use:
-      - 美国节点
       - AI_1
     url: http://www.gstatic.com/generate_204
     interval: 300
   - name: 自动选择
     type: url-test
     use:
-      - Helium Network
-      - PH-TG
-      - 分享社
       - ikuuu
       - 十元
     url: http://www.gstatic.com/generate_204
-    interval: 300
-  - name: 兜底
-    type: fallback
-    use:
-      - ikuuu
-    url: 'http://www.gstatic.com/generate_204'
     interval: 300
 rule-providers:
     reject:
