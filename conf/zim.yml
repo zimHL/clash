@@ -182,7 +182,7 @@ proxy-providers:
       interval: 600
       lazy: true
       url: http://www.gstatic.com/generate_204
-  ikuuu:
+  ikuu:
     type: http
     url: https://11864acf.no-mad-world.club/link/qb3fR04GLRCw9eJs?clash=3&extend=1
     interval: 3600
@@ -197,11 +197,12 @@ proxy-groups:
     proxies:
       - 自动选择
       - 十元
+      - ikuuu
       - ChatGPT
   - name: ikuuu
     type: select
     use:
-      - ikuuu
+      - ikuu
   - name: 十元
     type: select
     use:
@@ -215,7 +216,7 @@ proxy-groups:
   - name: music
     type: url-test
     use:
-      - ikuuu
+      - ikuu
     url: http://www.gstatic.com/generate_204
     interval: 300
   - name: ChatGPT
