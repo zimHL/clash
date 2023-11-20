@@ -174,7 +174,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   tg_1:
     type: http
-    url: https://fast.shiyuanyinian.xyz/api/v1/client/subscribe?token=f4342a117826459f54dd4f863c691a88&flag=clash
+    url: https://fast.shiyuanyinian.xyz/api/v1/client/subscribe?token=9589fa87a6086adf1c9403d73d8c81b1&flag=clash
     filter: HK|hk|香港|TW|台湾|SG|新加坡|JP|日本|KR|韩国
     interval: 3600
     health-check:
@@ -271,6 +271,7 @@ rules:
     - RULE-SET,去广告,REJECT
     - RULE-SET,reject,REJECT
     - RULE-SET,AdBlock,REJECT
+    - DOMAIN-KEYWORD,shiyuanyinian,zim
     - DOMAIN-KEYWORD,grazie.ai,ChatGPT
     - DOMAIN-KEYWORD,copilot,ChatGPT
     - DOMAIN-KEYWORD,intellij.net,ChatGPT
