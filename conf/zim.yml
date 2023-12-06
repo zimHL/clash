@@ -256,6 +256,11 @@ rule-providers:
         type: file
         behavior: classical
         path: D:\1.Sys_Tools\Clash\rules\fxs_rules.yaml
+    chatGPT_voice:
+        type: http
+        behavior: classical
+        url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Clash/Rule/OpenAI.yaml
+        interval: 86400    
 #rules:
 #    - DOMAIN-SUFFIX,google.com,auto                    域名后缀匹配，google.com,自动    mail.google.com会匹配，content-google.com不会匹配，已.google.com结尾的
 #    - DOMAIN-KEYWORD,google,auto                       域名关键字匹配，google.com,自动   mail.google.com、content-google.com都会匹配
@@ -271,6 +276,7 @@ rules:
     - RULE-SET,去广告,REJECT
     - RULE-SET,reject,REJECT
     - RULE-SET,AdBlock,REJECT
+    - RULE-SET,chatGPT_voice,ChatGPT
     - DOMAIN-KEYWORD,shiyuanyinian,zim
     - DOMAIN-KEYWORD,grazie.ai,ChatGPT
     - DOMAIN-KEYWORD,copilot,ChatGPT
