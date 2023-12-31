@@ -261,11 +261,11 @@ rule-providers:
         behavior: classical
         url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Clash/Rule/OpenAI.yaml
         interval: 86400    
-    copilot:
-        type: http
-        behavior: classical
-        url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/Copilot.list
-        interval: 86400
+#    copilot:
+#        type: http
+#        behavior: classical
+#        url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/Copilot.list
+#        interval: 86400
 #rules:
 #    - DOMAIN-SUFFIX,google.com,auto                    域名后缀匹配，google.com,自动    mail.google.com会匹配，content-google.com不会匹配，已.google.com结尾的
 #    - DOMAIN-KEYWORD,google,auto                       域名关键字匹配，google.com,自动   mail.google.com、content-google.com都会匹配
@@ -282,7 +282,22 @@ rules:
     - RULE-SET,reject,REJECT
     - RULE-SET,AdBlock,REJECT
     - RULE-SET,chatGPT_voice,ChatGPT
-    - RULE-SET,copilot,ChatGPT
+    - DOMAIN, api.msn.com,ChatGPT
+    - DOMAIN, assets.msn.com,ChatGPT
+    - DOMAIN, dealczars.bing-shopping.microsoft-falcon.io,ChatGPT
+    - DOMAIN, gateway.bingviz.microsoftapp.net,ChatGPT
+    - DOMAIN, location.microsoft.com,ChatGPT
+    - DOMAIN, login.microsoftonline.com,ChatGPT
+    - DOMAIN, self.events.data.microsoft.com,ChatGPT
+    - DOMAIN, services.bingapis.com,ChatGPT
+    - DOMAIN, shopping.bing-shopping.microsoft-falcon.io,ChatGPT
+    - DOMAIN, sapphire.api.microsoftapp.net,ChatGPT
+    - DOMAIN, sr.bing.com,ChatGPT
+    - DOMAIN, sydney.bing.com,ChatGPT
+    - DOMAIN, ssl.bing.com,ChatGPT
+    - DOMAIN, th.bing.com,ChatGPT
+    - DOMAIN, www.bing.com,ChatGPT
+    - DOMAIN, www.bingapis.com,ChatGPT
     - DOMAIN-KEYWORD,shiyuanyinian,zim
     - DOMAIN-KEYWORD,grazie.ai,ChatGPT
     - DOMAIN-KEYWORD,copilot,ChatGPT
