@@ -173,8 +173,8 @@ proxy-providers:
       lazy: true
       url: http://www.gstatic.com/generate_204
   AI_2:
-    type: http
-    url: https://dy.588511.xyz/api/v1/client/subscribe?token=2b51d16054de17ce488d913aefd2992b&flag=clash
+    type: file
+    path: D:\1.Sys_Tools\Clash\conf\1706681683684.yml
     filter: 美国|US|纽约|GPT
     interval: 3600
     health-check:
@@ -202,8 +202,8 @@ proxy-providers:
       lazy: true
       url: http://www.gstatic.com/generate_204
   周树人:
-    type: http
-    url: https://dy.588511.xyz/api/v1/client/subscribe?token=2b51d16054de17ce488d913aefd2992b&flag=clash
+    type: file
+    path: D:\1.Sys_Tools\Clash\conf\1706681683684.yml
     interval: 3600
     health-check:
       enable: true
