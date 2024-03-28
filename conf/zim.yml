@@ -155,8 +155,8 @@ proxies:
 proxy-providers:
   AI_1:
     type: http
-    url: D:\1.Sys_Tools\Clash\conf\1706681683684.yml
-    filter: 美国|US|纽约
+    path: D:\1.Sys_Tools\Clash\conf\1706681683684.yml
+    filter: 美国|US|纽约|GPT|英国|UK|伦敦
     interval: 3600
     health-check:
       enable: true
@@ -166,7 +166,7 @@ proxy-providers:
   AI_2:
     type: file
     path: D:\1.Sys_Tools\Clash\conf\1706681683684.yml
-    filter: 美国|US|纽约|GPT
+    filter: 美国|US|纽约|GPT|英国|UK|伦敦
     interval: 3600
     health-check:
       enable: true
@@ -175,7 +175,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   tg_1:
     type: http
-    url: D:\1.Sys_Tools\Clash\conf\1706681683684.yml
+    path: D:\1.Sys_Tools\Clash\conf\1706681683684.yml
     filter: HK|hk|香港|TW|台湾|SG|新加坡|JP|日本|KR|韩国
     interval: 3600
     health-check:
