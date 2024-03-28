@@ -154,16 +154,6 @@ proxies:
               Host: wu.yilongdog.top
 proxy-providers:
   AI_1:
-    type: http
-    path: D:\1.Sys_Tools\Clash\conf\1706681683684.yml
-    filter: 美国|US|纽约|GPT|英国|UK|伦敦
-    interval: 3600
-    health-check:
-      enable: true
-      interval: 600
-      lazy: true
-      url: http://www.gstatic.com/generate_204
-  AI_2:
     type: file
     path: D:\1.Sys_Tools\Clash\conf\1706681683684.yml
     filter: 美国|US|纽约|GPT|英国|UK|伦敦
@@ -173,16 +163,16 @@ proxy-providers:
       interval: 600
       lazy: true
       url: http://www.gstatic.com/generate_204
-  tg_1:
-    type: http
-    path: D:\1.Sys_Tools\Clash\conf\1706681683684.yml
-    filter: HK|hk|香港|TW|台湾|SG|新加坡|JP|日本|KR|韩国
-    interval: 3600
-    health-check:
-      enable: true
-      interval: 600
-      lazy: true
-      url: http://www.gstatic.com/generate_204
+  # tg_1:
+  #   type: file
+  #   path: D:\1.Sys_Tools\Clash\conf\1706681683684.yml
+  #   filter: HK|hk|香港|TW|台湾|SG|新加坡|JP|日本|KR|韩国
+  #   interval: 3600
+  #   health-check:
+  #     enable: true
+  #     interval: 600
+  #     lazy: true
+  #     url: http://www.gstatic.com/generate_204
   ikuu:
     type: http
     url: https://11864acf.no-mad-world.club/link/qb3fR04GLRCw9eJs?clash=3&extend=1
@@ -220,7 +210,7 @@ proxy-groups:
   - name: tg
     type: url-test
     use:
-      - tg_1
+      - 自动选择
     url: http://www.gstatic.com/generate_204
     interval: 300
   - name: music
@@ -238,7 +228,6 @@ proxy-groups:
       - ChatGPT专用-004
     use:
       - AI_1
-      - AI_2
     url: http://www.gstatic.com/generate_204
     interval: 300
   - name: 自动选择
